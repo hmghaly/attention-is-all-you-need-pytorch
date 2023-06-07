@@ -266,9 +266,10 @@ def main_wo_bpe():
     assert not any([opt.data_src, opt.data_trg]), 'Custom data input is not support now.'
     assert not any([opt.data_src, opt.data_trg]) or all([opt.data_src, opt.data_trg])
     print(opt)
-
-    src_lang_model = spacy.load(opt.lang_src)
-    trg_lang_model = spacy.load(opt.lang_trg)
+    spacy_src_lang_model_path='%s_core_web_sm'%opt.lang_src
+    spacy_trg_lang_model_path='%s_core_web_sm'%opt.lang_trg
+    src_lang_model = spacy.load(spacy_src_lang_model_path)
+    trg_lang_model = spacy.load(spacy_trg_lang_model_path)
 
     def tokenize_src(text):
         return [tok.text for tok in src_lang_model.tokenizer(text)]
