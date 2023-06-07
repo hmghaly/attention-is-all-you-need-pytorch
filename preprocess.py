@@ -267,7 +267,7 @@ def main_wo_bpe():
     assert not any([opt.data_src, opt.data_trg]) or all([opt.data_src, opt.data_trg])
     print(opt)
     spacy_src_lang_model_path='%s_core_web_sm'%opt.lang_src
-    spacy_trg_lang_model_path='%s_core_web_sm'%opt.lang_trg
+    spacy_trg_lang_model_path='%s_core_news_sm'%opt.lang_trg
     src_lang_model = spacy.load(spacy_src_lang_model_path)
     trg_lang_model = spacy.load(spacy_trg_lang_model_path)
 
